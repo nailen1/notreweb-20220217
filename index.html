@@ -1,0 +1,1421 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<script>
+    var BASE_URL = 'https\u003A\u002F\u002Fwww.lenotre.com\u002F';
+    var require = {
+        'baseUrl': 'https\u003A\u002F\u002Fwww.lenotre.com\u002Fstatic\u002Fversion1644416330\u002Ffrontend\u002FLenotre\u002Fdefault\u002Ffr_FR'
+    };</script>
+<meta charset="utf-8"/>
+
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-12c9065653da5dc0f14",applicationID:"913275406"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);
+</script>
+
+<meta name="title" content="Lenôtre"/>
+<meta name="keywords" content="Magento, Varien, E-commerce"/>
+<meta name="robots" content="INDEX,FOLLOW"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="format-detection" content="telephone=no"/>
+
+<title>Lenôtre</title>
+
+<link rel="stylesheet" type="text/css" media="all" href="https://www.lenotre.com/static/version1644416330/frontend/Lenotre/default/default/mage/calendar.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="https://www.lenotre.com/static/version1644416330/frontend/Lenotre/default/default/css/styles-m.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="https://www.lenotre.com/static/version1644416330/base/Magento/base/default/Amasty_Label/vendor/tooltipster/css/tooltipster.min.css"/>
+<link rel="stylesheet" type="text/css" media="all" href="https://www.lenotre.com/static/version1644416330/frontend/Magento/base/default/Amasty_Storelocator/vendor/chosen/chosen.min.css"/>
+<link rel="stylesheet" type="text/css" media="screen and (min-width: 768px)" href="https://www.lenotre.com/static/version1644416330/frontend/Lenotre/default/default/css/styles-l.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="https://www.lenotre.com/static/version1644416330/frontend/Lenotre/default/default/css/print.css"/>
+<link rel="icon" type="image/x-icon" href="https://www.lenotre.com/static/version1644416330/frontend/Lenotre/default/default/Magento_Theme/favicon.ico"/>
+<link rel="shortcut icon" type="image/x-icon" href="https://www.lenotre.com/static/version1644416330/frontend/Lenotre/default/default/Magento_Theme/favicon.ico"/>
+<script type="text/javascript" src="https://www.lenotre.com/static/version1644416330/base/Magento/base/default/requirejs/require.js"></script>
+<script type="text/javascript" src="https://www.lenotre.com/static/version1644416330/base/Magento/base/default/mage/requirejs/baseUrlResolver.js"></script>
+<script type="text/javascript" src="https://www.lenotre.com/static/version1644416330/frontend/Lenotre/default/fr_FR/requirejs-map.js"></script>
+<script type="text/javascript" src="https://www.lenotre.com/static/version1644416330/base/Magento/base/default/mage/requirejs/mixins.js"></script>
+<script type="text/javascript" src="https://www.lenotre.com/static/version1644416330/frontend/Lenotre/default/fr_FR/requirejs-config.js"></script>
+<link rel="preload" as="font" crossorigin="anonymous" href="https://www.lenotre.com/static/version1644416330/base/Magento/base/default/fonts/opensans/regular/opensans-400.woff2"/>
+<link rel="preload" as="font" crossorigin="anonymous" href="https://www.lenotre.com/static/version1644416330/frontend/Lenotre/default/default/fonts/essonnes/essonnesdisplay-light-webfont.woff2"/>
+
+<script>
+        window.getWpGA4Cookie = function(name) {
+            match = document.cookie.match(new RegExp(name + '=([^;]+)'));
+            if (match) return decodeURIComponent(match[1].replace(/\+/g, ' ')) ;
+        };
+        function applyDataLayer() {
+            window.dataLayer = window.dataLayer || [];
+            if (window.dataLayer.filter((function(e) {return "gtm.load" === e.event} )).length > 0) {
+                                var dl4Objects = [{"pageName":"Len\u00f4tre","pageType":"home"}];
+                for (var i in dl4Objects) {
+                    window.dataLayer.push(dl4Objects[i]);
+                }
+                                var wpGA4Cookies = [];
+                wpGA4Cookies.map(function (cookieName) {
+                    var cookieValue = window.getWpGA4Cookie(cookieName);
+                    console.log('cookieValue : ', cookieValue);
+                    if (cookieValue) {
+                        var dl4Object = {};
+                        dl4Object[cookieName.replace('wp_ga4_', '')] = cookieValue;
+                        console.log('pushing data 2');
+                        window.dataLayer.push(dl4Object);
+                    }
+                });
+            } else {
+                setTimeout(applyDataLayer, 500);
+            }
+        }
+        applyDataLayer();
+</script>
+
+
+<!-- COOKIE POPUP -->
+<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TXF2NBB');</script> -->
+
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_PageCache/js/form-key-provider": {}
+            }
+        }
+</script>
+
+</head>
+
+<!-- H E A D . -->
+
+
+
+
+
+<body data-container="body" data-mage-init='{"loaderAjax": {}, "loader": { "icon": "https://www.lenotre.com/static/version1644416330/base/Magento/base/default/images/loader-2.gif"}}' id="html-body" class="cms-home page-layout-1column cms-index-index page-layout-cms-full-width">
+
+<noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXF2NBB" height="0" width="0" style="display:none;visibility:hidden">
+</iframe>
+</noscript>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_PageBuilder/js/widget-initializer": {
+                "config": {"[data-content-type=\"slider\"][data-appearance=\"default\"]":{"Magento_PageBuilder\/js\/content-type\/slider\/appearance\/default\/widget":false},"[data-content-type=\"map\"]":{"Magento_PageBuilder\/js\/content-type\/map\/appearance\/default\/widget":false},"[data-content-type=\"row\"]":{"Magento_PageBuilder\/js\/content-type\/row\/appearance\/default\/widget":false},"[data-content-type=\"tabs\"]":{"Magento_PageBuilder\/js\/content-type\/tabs\/appearance\/default\/widget":false},"[data-content-type=\"slide\"]":{"Magento_PageBuilder\/js\/content-type\/slide\/appearance\/default\/widget":{"buttonSelector":".pagebuilder-slide-button","showOverlay":"hover","dataRole":"slide"}},"[data-content-type=\"banner\"]":{"Magento_PageBuilder\/js\/content-type\/banner\/appearance\/default\/widget":{"buttonSelector":".pagebuilder-banner-button","showOverlay":"hover","dataRole":"banner"}},"[data-content-type=\"buttons\"]":{"Magento_PageBuilder\/js\/content-type\/buttons\/appearance\/inline\/widget":false},"[data-content-type=\"products\"][data-appearance=\"carousel\"]":{"Magento_PageBuilder\/js\/content-type\/products\/appearance\/carousel\/widget":false},"[data-content-type=\"dotdigitalgroup_form\"]":{"Dotdigitalgroup_Enterprise\/js\/content-type\/dotdigitalgroup-form\/appearance\/default\/widget":false}},
+                "breakpoints": {"desktop":{"label":"Desktop","stage":true,"default":true,"class":"desktop-switcher","icon":"Magento_PageBuilder::css\/images\/switcher\/switcher-desktop.svg","conditions":{"min-width":"1024px"},"options":{"products":{"default":{"slidesToShow":"4"}}}},"tablet":{"conditions":{"max-width":"1024px","min-width":"768px"},"options":{"products":{"default":{"slidesToShow":"4"},"continuous":{"slidesToShow":"4"}}}},"mobile":{"label":"Mobile","stage":true,"class":"mobile-switcher","icon":"Magento_PageBuilder::css\/images\/switcher\/switcher-mobile.svg","media":"only screen and (max-width: 768px)","conditions":{"max-width":"768px","min-width":"640px"},"options":{"products":{"default":{"slidesToShow":"1"}}}},"mobile-small":{"conditions":{"max-width":"640px"},"options":{"products":{"default":{"slidesToShow":"1"},"continuous":{"slidesToShow":"1"}}}}}            }
+        }
+    }
+</script>
+
+<div id="cookie-status">
+	 The store will not work correctly in the case when cookies are disabled.
+</div>
+
+<script type="text&#x2F;javascript">document.querySelector("#cookie-status").style.display = "none";</script>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "cookieStatus": {}
+        }
+    }
+</script>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "mage/cookies": {
+                "expires": null,
+                "path": "\u002F",
+                "domain": ".www.lenotre.com",
+                "secure": false,
+                "lifetime": "3600"
+            }
+        }
+    }
+</script>
+
+<noscript>
+<div class="message global noscript">
+	<div class="content">
+		<p>
+			<strong>Javascript est désactivé dans votre navigateur.</strong>
+			<span>
+			Pour une meilleure expérience sur notre site, assurez-vous d’activer JavaScript dans votre navigateur. </span>
+		</p>
+	</div>
+</div>
+</noscript>
+
+<script>    require.config({
+        map: {
+            '*': {
+                wysiwygAdapter: 'mage/adminhtml/wysiwyg/tiny_mce/tinymce4Adapter'
+            }
+        }
+    });
+</script>
+
+<script>
+    window.cookiesConfig = window.cookiesConfig || {};
+    window.cookiesConfig.secure = true;
+</script>
+
+<script>
+    require.config({
+        paths: {
+            googleMaps: 'https\u003A\u002F\u002Fmaps.googleapis.com\u002Fmaps\u002Fapi\u002Fjs\u003Fv\u003D3\u0026key\u003D'
+        },
+        config: {
+            'Magento_PageBuilder/js/utils/map': {
+                style: ''
+            },
+            'Magento_PageBuilder/js/content-type/map/preview': {
+                apiKey: '',
+                apiKeyErrorMessage: 'You\u0020must\u0020provide\u0020a\u0020valid\u0020\u003Ca\u0020href\u003D\u0027https\u003A\u002F\u002Fwww.lenotre.com\u002Fadminhtml\u002Fsystem_config\u002Fedit\u002Fsection\u002Fcms\u002F\u0023cms_pagebuilder\u0027\u0020target\u003D\u0027_blank\u0027\u003EGoogle\u0020Maps\u0020API\u0020key\u003C\u002Fa\u003E\u0020to\u0020use\u0020a\u0020map.'
+            },
+            'Magento_PageBuilder/js/form/element/map': {
+                apiKey: '',
+                apiKeyErrorMessage: 'You\u0020must\u0020provide\u0020a\u0020valid\u0020\u003Ca\u0020href\u003D\u0027https\u003A\u002F\u002Fwww.lenotre.com\u002Fadminhtml\u002Fsystem_config\u002Fedit\u002Fsection\u002Fcms\u002F\u0023cms_pagebuilder\u0027\u0020target\u003D\u0027_blank\u0027\u003EGoogle\u0020Maps\u0020API\u0020key\u003C\u002Fa\u003E\u0020to\u0020use\u0020a\u0020map.'
+            },
+        }
+    });
+</script>
+
+<script>
+    require.config({
+        shim: {
+            'Magento_PageBuilder/js/utils/map': {
+                deps: ['googleMaps']
+            }
+        }
+    });
+</script>
+
+<div class="page-wrapper">
+	<header class="page-header">
+	<div class="panel wrapper">
+		<div class="panel header">
+			<a class="action skip contentarea" href="#contentarea">
+			<span>
+			Allez au contenu </span>
+			</a>
+		</div>
+		<div class="website-heading-wrapper">
+			<div class="website-heading content">
+				<span data-action="toggle-nav" class="action nav-toggle"><span>Basculer la navigation</span></span>
+				<a class="logo" href="https://www.lenotre.com/" title="" aria-label="store logo">
+				<img src="https://www.lenotre.com/static/version1644416330/frontend/Lenotre/default/default/images/logo-lenotre.svg" alt="" width="134" height="134"/>
+				</a>
+				<div class="website-baseline">
+					<span class="text1">Artisans</span>
+					<span class="text2">Créateurs d&#039;émotions</span>
+				</div>
+				<div class="website-heading-links">
+					<div class="link company-link">
+						<a href="https://www.lenotre.com/espace-entreprise/">
+						Espace entreprise </a>
+					</div>
+					<div class="link shop-link">
+						<a href="https://www.lenotre.com/nos-boutiques/">
+						Nos boutiques </a>
+					</div>
+					<div class="link contact-link">
+						<a href="https://www.lenotre.com/contact/form/productOrderInfo/">
+						Nous contacter </a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header content">
+		<div class="block block-search">
+			<div class="block block-title">
+				<strong>Rechercher</strong>
+			</div>
+			<div class="block block-content">
+				<form class="form minisearch" id="search_mini_form" action="https://www.lenotre.com/catalogsearch/result/" method="get">
+					<div class="field search">
+						<label class="label" for="search" data-role="minisearch-label">
+						<span>Rechercher</span>
+						</label>
+						<div class="control">
+							<input id="search" data-mage-init='{"quickSearch":{ "formSelector":"#search_mini_form", "url":"https://www.lenotre.com/search/ajax/suggest/", "destinationSelector":"#search_autocomplete", "minSearchLength":"3"} }' type="text" name="q" value="" placeholder="Rechercher" class="input-text" maxlength="128" role="combobox" aria-haspopup="false" aria-autocomplete="both" autocomplete="off" aria-expanded="false"/>
+							<div id="search_autocomplete" class="search-autocomplete">
+							</div>
+						</div>
+					</div>
+					<div class="actions">
+						<button type="submit" title="Rechercher" class="action search" aria-label="Search">
+						<span>Rechercher</span>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="website-icons-container">
+			<div class="favorite-icon">
+				<a href="https://www.lenotre.com/wishlist/">
+				<span class="text">Mes envies</span>
+				</a>
+			</div>
+			<div class="account-icon">
+				<a href="https://www.lenotre.com/customer/account/">
+				<span class="text">Mon compte</span>
+				</a>
+			</div>
+			<div data-block="minicart" class="minicart-wrapper">
+				<a class="action showcart" href="https://www.lenotre.com/checkout/cart/" data-bind="scope: 'minicart_content'">
+				<span class="text">Panier</span>
+				<span class="counter qty empty" data-bind="css: { empty: !!getCartParam('summary_count')==false && !isLoading() }, blockLoader: isLoading">
+				<span class="counter-number">
+				<!-- ko text: getCartParam('summary_count') -->
+				<!-- /ko -->
+				</span>
+				<span class="counter-label">
+				<!-- ko if: getCartParam('summary_count') -->
+				<!-- ko text: getCartParam('summary_count') -->
+				<!-- /ko -->
+				<!-- ko i18n: 'items' -->
+				<!-- /ko -->
+				<!-- /ko -->
+				</span>
+				</span>
+				</a>
+				<div class="block block-minicart" data-role="dropdownDialog" data-mage-init='{"dropdownDialog":{ "appendTo":"[data-block=minicart]", "triggerTarget":".showcart", "timeout": "2000", "closeOnMouseLeave": false, "closeOnEscape": true, "triggerClass":"active", "parentClass":"active", "buttons":[]}}'>
+					<div id="minicart-content-wrapper" data-bind="scope: 'minicart_content'">
+						<!-- ko template: getTemplate() -->
+						<!-- /ko -->
+					</div>
+				</div>
+				<script>window.checkout = {"shoppingCartUrl":"https:\/\/www.lenotre.com\/checkout\/cart\/","checkoutUrl":"https:\/\/www.lenotre.com\/checkout\/","updateItemQtyUrl":"https:\/\/www.lenotre.com\/checkout\/sidebar\/updateItemQty\/","removeItemUrl":"https:\/\/www.lenotre.com\/checkout\/sidebar\/removeItem\/","imageTemplate":"Magento_Catalog\/product\/image_with_borders","baseUrl":"https:\/\/www.lenotre.com\/","minicartMaxItemsVisible":5,"websiteId":"1","maxItemsToDisplay":10,"storeId":"1","storeGroupId":"1","customerLoginUrl":"https:\/\/www.lenotre.com\/customer\/account\/login\/referer\/aHR0cHM6Ly93d3cubGVub3RyZS5jb20v\/","isRedirectRequired":false,"autocomplete":"off","captcha":{"user_login":{"isCaseSensitive":false,"imageHeight":50,"imageSrc":"","refreshUrl":"https:\/\/www.lenotre.com\/captcha\/refresh\/","isRequired":false,"timestamp":1645092084}}}</script>
+				<script type="text/x-magento-init">
+    {
+        "[data-block='minicart']": {
+            "Magento_Ui/js/core/app": {"components":{"minicart_content":{"children":{"subtotal.container":{"children":{"subtotal":{"children":{"subtotal.totals":{"config":{"display_cart_subtotal_incl_tax":1,"display_cart_subtotal_excl_tax":0,"template":"Magento_Tax\/checkout\/minicart\/subtotal\/totals"},"children":{"subtotal.totals.msrp":{"component":"Magento_Msrp\/js\/view\/checkout\/minicart\/subtotal\/totals","config":{"displayArea":"minicart-subtotal-hidden","template":"Magento_Msrp\/checkout\/minicart\/subtotal\/totals"}}},"component":"Magento_Tax\/js\/view\/checkout\/minicart\/subtotal\/totals"}},"component":"uiComponent","config":{"template":"Magento_Checkout\/minicart\/subtotal"}}},"component":"uiComponent","config":{"displayArea":"subtotalContainer"}},"item.renderer":{"component":"Magento_Checkout\/js\/view\/cart-item-renderer","config":{"displayArea":"defaultRenderer","template":"Magento_Checkout\/minicart\/item\/default"},"children":{"item.image":{"component":"Magento_Catalog\/js\/view\/image","config":{"template":"Magento_Catalog\/product\/image","displayArea":"itemImage"}},"checkout.cart.item.price.sidebar":{"component":"uiComponent","config":{"template":"Magento_Checkout\/minicart\/item\/price","displayArea":"priceSidebar"}}}},"extra_info":{"component":"uiComponent","config":{"displayArea":"extraInfo"}},"promotion":{"component":"uiComponent","config":{"displayArea":"promotion"}}},"config":{"itemRenderer":{"default":"defaultRenderer","simple":"defaultRenderer","virtual":"defaultRenderer"},"template":"Magento_Checkout\/minicart\/content"},"component":"Magento_Checkout\/js\/view\/minicart"}},"types":[]}        },
+        "*": {
+            "Magento_Ui/js/block-loader": "https\u003A\u002F\u002Fwww.lenotre.com\u002Fstatic\u002Fversion1644416330\u002Fbase\u002FMagento\u002Fbase\u002Fdefault\u002Fimages\u002Floader\u002D1.gif"
+        }
+    }
+    </script>
+			</div>
+		</div>
+	</div>
+	</header>
+	<div class="sections nav-sections" data-mage-init='{ "LenotreMenuMobile": {} }'>
+		<div class="header-menu-mobile">
+			<div class="top-header-mobile">
+				<a data-action="toggle-nav" href="#" class="close-menu">Fermer</a>
+			</div>
+			<img class="logo-lenotre" src="https://www.lenotre.com/static/version1644416330/frontend/Lenotre/default/default/images/logo-lenotre.svg" alt="Logo Lenotre"/>
+			<div class="block block-search">
+				<div class="block block-title">
+					<strong>Rechercher</strong>
+				</div>
+				<div class="block block-content">
+					<form class="form minisearch" id="search_mini_form-mobilemenu" action="https://www.lenotre.com/catalogsearch/result/" method="get">
+						<div class="field search">
+							<label class="label" for="search" data-role="minisearch-label">
+							<span>Rechercher</span>
+							</label>
+							<div class="control">
+								<input id="search-mobilemenu" data-mage-init='{"quickSearch":{ "formSelector":"#search_mini_form-mobilemenu", "url":"https://www.lenotre.com/search/ajax/suggest/", "destinationSelector":"#search_autocomplete-mobilemenu", "minSearchLength":"3"} }' type="text" name="q-mobilemenu" value="" placeholder="Rechercher" class="input-text" maxlength="128" role="combobox" aria-haspopup="false" aria-autocomplete="both" autocomplete="off" aria-expanded="false"/>
+								<div id="search_autocomplete-mobilemenu" class="search-autocomplete">
+								</div>
+							</div>
+						</div>
+						<div class="actions">
+							<button type="submit" title="Rechercher" class="action search" aria-label="Search">
+							<span>Rechercher</span>
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="section-items nav-sections-items" data-mage-init='{"tabs":{"openedState":"active"}}'>
+			<div class="section-item-content nav-sections-item-content" id="store.menu" data-role="content">
+				<nav class="navigation" data-action="navigation">
+				<ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+					<li class="level0 nav-1 category-item first level-top parent"><a href="https://www.lenotre.com/patisserie.html" class="level-top"><span>Pâtisserie</span></a>
+					<div class="div-container megamenu">
+						<ul class="level0 submenu">
+							<li class="level1 nav-1-1 category-item first"><a href="https://www.lenotre.com/patisserie/patisseries.html"><span>Pâtisseries</span></a></li>
+							<li class="level1 nav-1-2 category-item"><a href="https://www.lenotre.com/patisserie/macarons.html"><span>Macarons</span></a></li>
+							<li class="level1 nav-1-3 category-item"><a href="https://www.lenotre.com/patisserie/boulangerie-viennoiserie.html"><span>Boulangerie / Viennoiserie</span></a></li>
+							<li class="level1 nav-1-4 category-item"><a href="https://www.lenotre.com/patisserie/chocolat-confiserie.html"><span>Chocolat / Confiserie</span></a></li>
+							<li class="level1 nav-1-5 category-item"><a href="https://www.lenotre.com/patisserie/teatime.html"><span>Teatime</span></a></li>
+							<li class="level1 nav-1-6 category-item"><a href="https://www.lenotre.com/patisserie/nos-formules.html"><span>Nos formules</span></a></li>
+							<li class="level1 nav-1-7 category-item"><a href="https://www.lenotre.com/patisserie/glaces.html"><span>Glaces</span></a></li>
+							<li class="level1 nav-1-8 category-item last"><a href="https://www.lenotre.com/patisserie/pieces-montees.html"><span>Pièces Montées</span></a></li>
+							<li class="view-all-products-link"><a href="https://www.lenotre.com/patisserie.html"><span>Voir tous les produits</span></a></li>
+						</ul>
+						<div class="first-level-category-content">
+							<div class="category-name">
+								Pâtisserie
+							</div>
+							<div class="category-image">
+								<img src="/media/catalog/category/445X280_PATISSERIE_2_1.jpg" title="P&#xE2;tisserie" class="image"/>
+							</div>
+						</div>
+					</div>
+					</li>
+					<li class="level0 nav-2 category-item level-top parent"><a href="https://www.lenotre.com/traiteur-sale.html" class="level-top"><span>Traiteur salé</span></a>
+					<div class="div-container megamenu">
+						<ul class="level0 submenu">
+							<li class="level1 nav-2-1 category-item first"><a href="https://www.lenotre.com/traiteur-sale/aperitifs-cocktails.html"><span>Apéritifs &amp; Cocktails</span></a></li>
+							<li class="level1 nav-2-2 category-item"><a href="https://www.lenotre.com/traiteur-sale/entrees.html"><span>Entrées</span></a></li>
+							<li class="level1 nav-2-3 category-item"><a href="https://www.lenotre.com/traiteur-sale/plats-accompagnements.html"><span>Plats &amp; Accompagnements</span></a></li>
+							<li class="level1 nav-2-4 category-item"><a href="https://www.lenotre.com/traiteur-sale/nos-formules.html"><span>Nos formules</span></a></li>
+							<li class="level1 nav-2-5 category-item"><a href="https://www.lenotre.com/traiteur-sale/sur-le-pouce.html"><span>Sur le pouce</span></a></li>
+							<li class="level1 nav-2-6 category-item last"><a href="https://www.lenotre.com/traiteur-sale/produits-d-exception.html"><span>Produits d&#039;exception</span></a></li>
+							<li class="view-all-products-link"><a href="https://www.lenotre.com/traiteur-sale.html"><span>Voir tous les produits</span></a></li>
+						</ul>
+						<div class="first-level-category-content">
+							<div class="category-name">
+								Traiteur salé
+							</div>
+							<div class="category-image">
+								<img src="/media/catalog/category/445X280_TRAITEUR_SALE2.jpg" title="Traiteur&#x20;sal&#xE9;" class="image"/>
+							</div>
+						</div>
+					</div>
+					</li>
+					<li class="level0 nav-3 category-item level-top parent"><a href="https://www.lenotre.com/epicerie.html" class="level-top"><span>Épicerie</span></a>
+					<div class="div-container megamenu">
+						<ul class="level0 submenu">
+							<li class="level1 nav-3-1 category-item first"><a href="https://www.lenotre.com/epicerie/cave.html"><span>Cave</span></a></li>
+							<li class="level1 nav-3-2 category-item"><a href="https://www.lenotre.com/epicerie/thes.html"><span>Thés</span></a></li>
+							<li class="level1 nav-3-3 category-item"><a href="https://www.lenotre.com/epicerie/epicerie-salee.html"><span>Épicerie Salée</span></a></li>
+							<li class="level1 nav-3-4 category-item last"><a href="https://www.lenotre.com/epicerie/epicerie-sucree.html"><span>Épicerie Sucrée</span></a></li>
+							<li class="view-all-products-link"><a href="https://www.lenotre.com/epicerie.html"><span>Voir tous les produits</span></a></li>
+						</ul>
+						<div class="first-level-category-content">
+							<div class="category-name">
+								Épicerie
+							</div>
+							<div class="category-image">
+								<img src="/media/catalog/category/445X280_EPICERIE.jpg" title="&#xC9;picerie" class="image"/>
+							</div>
+						</div>
+					</div>
+					</li>
+					<li class="level0 nav-4 category-item level-top parent"><a href="https://www.lenotre.com/idees-cadeaux.html" class="level-top"><span>Idées cadeaux</span></a>
+					<div class="div-container megamenu">
+						<ul class="level0 submenu">
+							<li class="level1 nav-4-1 category-item first"><a href="https://www.lenotre.com/idees-cadeaux/coffrets-chocolats.html"><span>Coffrets Chocolats</span></a></li>
+							<li class="level1 nav-4-2 category-item"><a href="https://www.lenotre.com/idees-cadeaux/macarons.html"><span>Macarons</span></a></li>
+							<li class="level1 nav-4-3 category-item"><a href="https://www.lenotre.com/idees-cadeaux/coffrets-gourmands.html"><span>Coffrets Gourmands</span></a></li>
+							<li class="level1 nav-4-4 category-item"><a href="https://www.lenotre.com/idees-cadeaux/champagnes.html"><span>Champagnes</span></a></li>
+							<li class="level1 nav-4-5 category-item"><a href="https://www.lenotre.com/idees-cadeaux/autres-gourmandises.html"><span>Autres gourmandises</span></a></li>
+							<li class="level1 nav-4-6 category-item"><a href="https://www.lenotre.com/idees-cadeaux/cartes-cadeaux.html"><span>Cartes cadeaux</span></a></li>
+							<li class="level1 nav-4-7 category-item"><a href="https://www.lenotre.com/idees-cadeaux/cours-de-cuisine.html"><span>Cours de cuisine</span></a></li>
+							<li class="level1 nav-4-8 category-item last"><a href="https://www.lenotre.com/idees-cadeaux/livres-accessoires.html"><span>Livres &amp; accessoires</span></a></li>
+							<li class="view-all-products-link"><a href="https://www.lenotre.com/idees-cadeaux.html"><span>Voir tous les produits</span></a></li>
+						</ul>
+						<div class="first-level-category-content">
+							<div class="category-name">
+								Idées cadeaux
+							</div>
+							<div class="category-image">
+								<img src="/media/catalog/category/445X280_IDEES_CADEAUX.jpg" title="Id&#xE9;es&#x20;cadeaux" class="image"/>
+							</div>
+						</div>
+					</div>
+					</li>
+					<li class="level0 nav-5 level-top"><a href="https://www.lenotre.com/nos-activites" class="level-top"><span>Nos activités</span></a></li>
+					<li class="level0 nav-6 last level-top"><a href="https://www.lenotre.com/la-maison" class="level-top"><span>La maison</span></a></li>
+				</ul>
+				</nav>
+				<ul class="website-heading-link-mobile">
+					<li>
+					<a href="https://www.lenotre.com/espace-entreprise/">Espace entreprise</a>
+					</li>
+					<li>
+					<a href="https://www.lenotre.com/nos-boutiques/">Nos boutiques</a>
+					</li>
+					<li>
+					<a href="https://www.lenotre.com/contact/">Nous contacter</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<main id="maincontent" class="page-main-full-width"><a id="contentarea" tabindex="-1"></a>
+	<div class="page messages">
+		<div data-placeholder="messages">
+		</div>
+		<div data-bind="scope: 'messages'">
+			<!-- ko if: cookieMessages && cookieMessages.length > 0 -->
+			<div aria-atomic="true" role="alert" data-bind="foreach: { data: cookieMessages, as: 'message' }" class="messages">
+				<div data-bind="attr: { class: 'message-' + message.type + ' ' + message.type + ' message', 'data-ui-id': 'message-' + message.type }">
+					<div data-bind="html: $parent.prepareMessageForHtml(message.text)">
+					</div>
+				</div>
+			</div>
+			<!-- /ko -->
+			<!-- ko if: messages().messages && messages().messages.length > 0 -->
+			<div aria-atomic="true" role="alert" class="messages" data-bind="foreach: { data: messages().messages, as: 'message' }">
+				<div data-bind="attr: { class: 'message-' + message.type + ' ' + message.type + ' message', 'data-ui-id': 'message-' + message.type }">
+					<div data-bind="html: $parent.prepareMessageForHtml(message.text)">
+					</div>
+				</div>
+			</div>
+			<!-- /ko -->
+		</div>
+		<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                        "messages": {
+                            "component": "Magento_Theme/js/view/messages"
+                        }
+                    }
+                }
+            }
+    }
+		</script>
+	</div>
+	<div class="columns">
+		<div class="column main">
+			<input name="form_key" type="hidden" value="kR6u7vMAv6wzyiv7"/>
+			<div id="authenticationPopup" data-bind="scope:'authenticationPopup', style: {display: 'none'}">
+				<script>window.authenticationPopup = {"autocomplete":"off","customerRegisterUrl":"https:\/\/www.lenotre.com\/customer\/account\/create\/","customerForgotPasswordUrl":"https:\/\/www.lenotre.com\/customer\/account\/forgotpassword\/","baseUrl":"https:\/\/www.lenotre.com\/"}</script>
+				<!-- ko template: getTemplate() -->
+				<!-- /ko -->
+				<script type="text/x-magento-init">
+        {
+            "#authenticationPopup": {
+                "Magento_Ui/js/core/app": {"components":{"authenticationPopup":{"component":"Magento_Customer\/js\/view\/authentication-popup","children":{"messages":{"component":"Magento_Ui\/js\/view\/messages","displayArea":"messages"},"captcha":{"component":"Magento_Captcha\/js\/view\/checkout\/loginCaptcha","displayArea":"additional-login-form-fields","formId":"user_login","configSource":"checkout"},"amazon-button":{"component":"Amazon_Login\/js\/view\/login-button-wrapper","sortOrder":"0","displayArea":"additional-login-form-fields","config":{"tooltip":"Connectez-vous en toute s\u00e9curit\u00e9 \u00e0 notre site Web \u00e0 l'aide de vos identifiants Amazon existants.","componentDisabled":true}}}}}}            },
+            "*": {
+                "Magento_Ui/js/block-loader": "https\u003A\u002F\u002Fwww.lenotre.com\u002Fstatic\u002Fversion1644416330\u002Fbase\u002FMagento\u002Fbase\u002Fdefault\u002Fimages\u002Floader\u002D1.gif"
+            }
+        }
+    </script>
+			</div>
+			<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/section-config": {
+                "sections": {"stores\/store\/switch":["*"],"stores\/store\/switchrequest":["*"],"directory\/currency\/switch":["*"],"*":["messages"],"customer\/account\/logout":["*","recently_viewed_product","recently_compared_product","persistent"],"customer\/account\/loginpost":["*"],"customer\/account\/createpost":["*"],"customer\/account\/editpost":["*"],"customer\/ajax\/login":["checkout-data","cart","captcha"],"catalog\/product_compare\/add":["compare-products","wp_ga4"],"catalog\/product_compare\/remove":["compare-products"],"catalog\/product_compare\/clear":["compare-products"],"sales\/guest\/reorder":["cart"],"sales\/order\/reorder":["cart"],"checkout\/cart\/add":["cart","directory-data","wp_ga4"],"checkout\/cart\/delete":["cart","wp_ga4"],"checkout\/cart\/updatepost":["cart"],"checkout\/cart\/updateitemoptions":["cart"],"checkout\/cart\/couponpost":["cart"],"checkout\/cart\/estimatepost":["cart"],"checkout\/cart\/estimateupdatepost":["cart"],"checkout\/onepage\/saveorder":["cart","checkout-data","last-ordered-items"],"checkout\/sidebar\/removeitem":["cart","wp_ga4"],"checkout\/sidebar\/updateitemqty":["cart"],"rest\/*\/v1\/carts\/*\/payment-information":["cart","last-ordered-items","instant-purchase","wp_ga4"],"rest\/*\/v1\/guest-carts\/*\/payment-information":["cart","wp_ga4"],"rest\/*\/v1\/guest-carts\/*\/selected-payment-method":["cart","checkout-data"],"rest\/*\/v1\/carts\/*\/selected-payment-method":["cart","checkout-data","instant-purchase"],"wishlist\/index\/add":["wishlist","wp_ga4"],"wishlist\/index\/remove":["wishlist"],"wishlist\/index\/updateitemoptions":["wishlist"],"wishlist\/index\/update":["wishlist"],"wishlist\/index\/cart":["wishlist","cart","wp_ga4"],"wishlist\/index\/fromcart":["wishlist","cart"],"wishlist\/index\/allcart":["wishlist","cart","wp_ga4"],"wishlist\/shared\/allcart":["wishlist","cart"],"wishlist\/shared\/cart":["cart"],"customer_order\/cart\/updatefaileditemoptions":["cart"],"checkout\/cart\/updatefaileditemoptions":["cart"],"customer_order\/cart\/advancedadd":["cart"],"checkout\/cart\/advancedadd":["cart"],"checkout\/cart\/removeallfailed":["cart"],"checkout\/cart\/removefailed":["cart"],"customer_order\/cart\/addfaileditems":["cart"],"checkout\/cart\/addfaileditems":["cart"],"customer_order\/sku\/uploadfile":["cart"],"customer\/address\/*":["instant-purchase"],"customer\/account\/*":["instant-purchase"],"vault\/cards\/deleteaction":["instant-purchase"],"multishipping\/checkout\/overviewpost":["cart"],"wishlist\/index\/copyitem":["wishlist"],"wishlist\/index\/copyitems":["wishlist"],"wishlist\/index\/deletewishlist":["wishlist","multiplewishlist"],"wishlist\/index\/createwishlist":["multiplewishlist"],"wishlist\/index\/editwishlist":["multiplewishlist"],"wishlist\/index\/moveitem":["wishlist"],"wishlist\/index\/moveitems":["wishlist"],"wishlist\/search\/addtocart":["cart","wishlist"],"giftregistry\/index\/cart":["cart"],"giftregistry\/view\/addtocart":["cart"],"paypal\/express\/placeorder":["cart","checkout-data"],"paypal\/payflowexpress\/placeorder":["cart","checkout-data"],"paypal\/express\/onauthorization":["cart","checkout-data"],"persistent\/index\/unsetcookie":["persistent"],"review\/product\/post":["review"],"gdpr\/customer\/anonymise":["customer"],"checkout\/cart\/configure":["wp_ga4"],"rest\/*\/v1\/guest-carts\/*\/shipping-information":["wp_ga4"],"rest\/*\/v1\/carts\/*\/shipping-information":["wp_ga4"]},
+                "clientSideSections": ["checkout-data","cart-data","chatData"],
+                "baseUrls": ["https:\/\/www.lenotre.com\/"],
+                "sectionNames": ["messages","customer","compare-products","last-ordered-items","cart","directory-data","captcha","wishlist","instant-purchase","loggedAsCustomer","multiplewishlist","persistent","review","chatData","wp_ga4","recently_viewed_product","recently_compared_product","product_data_storage","paypal-billing-agreement"]            }
+        }
+    }
+			</script>
+			<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/customer-data": {
+                "sectionLoadUrl": "https\u003A\u002F\u002Fwww.lenotre.com\u002Fcustomer\u002Fsection\u002Fload\u002F",
+                "expirableSectionLifetime": 60,
+                "expirableSectionNames": ["cart","persistent"],
+                "cookieLifeTime": "3600",
+                "updateSessionUrl": "https\u003A\u002F\u002Fwww.lenotre.com\u002Fcustomer\u002Faccount\u002FupdateSession\u002F"
+            }
+        }
+    }
+			</script>
+			<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/invalidation-processor": {
+                "invalidationRules": {
+                    "website-rule": {
+                        "Magento_Customer/js/invalidation-rules/website-rule": {
+                            "scopeConfig": {
+                                "websiteId": "1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+			</script>
+			<script type="text/x-magento-init">
+    {
+        "body": {
+            "pageCache": {"url":"https:\/\/www.lenotre.com\/page_cache\/block\/render\/","handles":["default","cms_index_index","cms_page_view","cms_index_index_id_home"],"originalRequest":{"route":"cms","controller":"index","action":"index","uri":"\/"},"versionCookieName":"private_content_version"}        }
+    }
+			</script>
+			<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Banner/js/model/banner":
+            {"sectionLoadUrl":"https:\/\/www.lenotre.com\/banner\/ajax\/load\/","cacheTtl":30000}        }
+}
+			</script>
+			<style>
+#html-body [data-pb-style=HCHN4CL],#html-body [data-pb-style=M8BRBEM]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll}#html-body [data-pb-style=M8BRBEM]{width:100%;align-self:stretch}#html-body [data-pb-style=LETVBFV]{min-height:48rem}#html-body [data-pb-style=L3D69A3]{background-position:center top;background-size:cover;background-repeat:no-repeat}#html-body [data-pb-style=RYR17RQ]{background-color:transparent}#html-body [data-pb-style=PA84881]{background-position:center top;background-size:cover;background-repeat:no-repeat}#html-body [data-pb-style=DA6146N]{background-color:transparent}#html-body [data-pb-style=WBLE7WV]{background-position:center top;background-size:cover;background-repeat:no-repeat}#html-body [data-pb-style=JJK7DYQ]{background-color:transparent}#html-body [data-pb-style=FTWWGB6],#html-body [data-pb-style=XTV63YF]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll}#html-body [data-pb-style=FTWWGB6]{width:100%;align-self:stretch}#html-body [data-pb-style=VMEWNRP]{display:flex;flex-direction:column}#html-body [data-pb-style=SELND4G]{display:inline-block}#html-body [data-pb-style=FKIDFNN],#html-body [data-pb-style=G8V19S4],#html-body [data-pb-style=MQHAP8J],#html-body [data-pb-style=NMX98FV]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll}#html-body [data-pb-style=G8V19S4],#html-body [data-pb-style=NMX98FV]{width:100%;align-self:stretch}#html-body [data-pb-style=COWN0WX]{border-style:none}#html-body [data-pb-style=TYYN07B],#html-body [data-pb-style=XQOXAWM]{max-width:100%;height:auto}#html-body [data-pb-style=D1EUGB0]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;width:50%;align-self:stretch}#html-body [data-pb-style=R9MAQIY]{border-style:none}#html-body [data-pb-style=OJDC75P],#html-body [data-pb-style=U9LU89U]{max-width:100%;height:auto}#html-body [data-pb-style=K4JWD4D]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;width:50%;align-self:stretch}#html-body [data-pb-style=UOW133I]{border-style:none}#html-body [data-pb-style=FOKCKMR],#html-body [data-pb-style=FP275CR]{max-width:100%;height:auto}#html-body [data-pb-style=GCW6U3Y],#html-body [data-pb-style=HQEEKNS],#html-body [data-pb-style=JFF9M1S]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll}#html-body [data-pb-style=HQEEKNS],#html-body [data-pb-style=JFF9M1S]{width:100%;align-self:stretch}#html-body [data-pb-style=HQEEKNS]{width:25%}#html-body [data-pb-style=MS5S2H2]{border-style:none}#html-body [data-pb-style=KEL1TCE],#html-body [data-pb-style=SK1RIJB]{max-width:100%;height:auto}#html-body [data-pb-style=UWJLINR]{display:inline-block}#html-body [data-pb-style=N7BBD64]{text-align:center}#html-body [data-pb-style=G67WTB1]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;width:25%;align-self:stretch}#html-body [data-pb-style=WSC12Q4]{border-style:none}#html-body [data-pb-style=JJMNGI6],#html-body [data-pb-style=UHSWA3D]{max-width:100%;height:auto}#html-body [data-pb-style=XVBYICS]{display:inline-block}#html-body [data-pb-style=OR2NWTK]{text-align:center}#html-body [data-pb-style=WWEJLXS]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;width:25%;align-self:stretch}#html-body [data-pb-style=PXQ7NWG]{border-style:none}#html-body [data-pb-style=BGTQ578],#html-body [data-pb-style=K1C502P]{max-width:100%;height:auto}#html-body [data-pb-style=OH5MMQE]{display:inline-block}#html-body [data-pb-style=RJ78MNV]{text-align:center}#html-body [data-pb-style=JL5F41Q]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;width:25%;align-self:stretch}#html-body [data-pb-style=D0HUOFX]{border-style:none}#html-body [data-pb-style=QJGC9P1],#html-body [data-pb-style=W4ALKIG]{max-width:100%;height:auto}#html-body [data-pb-style=AJXRJCU]{display:inline-block}#html-body [data-pb-style=W3PURAW]{text-align:center}#html-body [data-pb-style=MGEUEVN],#html-body [data-pb-style=W3H6UPO],#html-body [data-pb-style=XNAA2P5]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll}#html-body [data-pb-style=MGEUEVN],#html-body [data-pb-style=W3H6UPO]{width:41.6667%;align-self:stretch}#html-body [data-pb-style=MGEUEVN]{width:58.3333%}#html-body [data-pb-style=YXU18WS]{border-style:none}#html-body [data-pb-style=BBKUBMR],#html-body [data-pb-style=VIY1UU5]{max-width:100%;height:auto}#html-body [data-pb-style=DHJ4QKB],#html-body [data-pb-style=UXTXNTV]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll}#html-body [data-pb-style=UXTXNTV]{width:100%;align-self:stretch}#html-body [data-pb-style=JN2KFJ1]{display:inline-block}#html-body [data-pb-style=P8FPNB6]{text-align:center}#html-body [data-pb-style=YG34MGV]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;width:50%;align-self:stretch}#html-body [data-pb-style=CNG6LGP]{border-style:none}#html-body [data-pb-style=GFKFRVD],#html-body [data-pb-style=W0UYYBU]{max-width:100%;height:auto}#html-body [data-pb-style=S33SK8E]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;width:50%;align-self:stretch}#html-body [data-pb-style=GVPRDKF]{border-style:none}#html-body [data-pb-style=N6SVKGA],#html-body [data-pb-style=XPKGVG2]{max-width:100%;height:auto}@media only screen and (max-width: 768px) { #html-body [data-pb-style=LETVBFV]{min-height:35.5rem}#html-body [data-pb-style=CNG6LGP],#html-body [data-pb-style=COWN0WX],#html-body [data-pb-style=D0HUOFX],#html-body [data-pb-style=GVPRDKF],#html-body [data-pb-style=MS5S2H2],#html-body [data-pb-style=PXQ7NWG],#html-body [data-pb-style=R9MAQIY],#html-body [data-pb-style=UOW133I],#html-body [data-pb-style=WSC12Q4],#html-body [data-pb-style=YXU18WS]{border-style:none} }
+			</style>
+			<div class="custom-slider-banner" data-content-type="row" data-appearance="full-bleed" data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="main" data-pb-style="HCHN4CL">
+				<div class="pagebuilder-column-group" style="display: flex;" data-content-type="column-group" data-grid-size="12" data-element="main">
+					<div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="M8BRBEM">
+						<div class="pagebuilder-slider" data-content-type="slider" data-appearance="default" data-autoplay="true" data-autoplay-speed="4000" data-fade="false" data-infinite-loop="true" data-show-arrows="true" data-show-dots="true" data-element="main" data-pb-style="LETVBFV">
+							<div data-content-type="slide" data-slide-name="Collection Automne-Hiver" data-appearance="poster" data-show-button="never" data-show-overlay="never" data-element="main">
+								<div data-element="empty_link">
+									<div class="pagebuilder-slide-wrapper background-image-620e1cf497881" data-background-images='{\"desktop_image\":\"https://www.lenotre.com/media/wysiwyg/slider-patisseries-AH-desk.jpg\",\"mobile_image\":\"https://www.lenotre.com/media/wysiwyg/slider-patisseries-AH-mob.jpg\"}' data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="wrapper" data-pb-style="L3D69A3">
+										<div class="pagebuilder-overlay pagebuilder-poster-overlay" data-overlay-color="" data-element="overlay" data-pb-style="RYR17RQ">
+											<div class="pagebuilder-poster-content">
+												<div data-element="content">
+													<h2>Notre Collection d'Hiver</h2>
+													<p>
+														Agrumes, vanille, caf&eacute;, caramel... Nos Chefs subliment les saveurs de saison dans leurs cr&eacute;ations sucr&eacute;es.
+													</p>
+													<p>
+														<span style="text-decoration: underline;"><a tabindex="0" href="https://fr.calameo.com/read/006427602e562c1a46d2b">Consultez notre catalogue Hiver</a></span>
+													</p>
+													<p>
+													</p>
+													<div class="widget block block-category-link">
+														<a href="https://www.lenotre.com/patisserie/patisseries.html"><span>D&eacute;couvrir</span></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<style type="text/css">
+.background-image-620e1cf497881 {background-image: url(https://www.lenotre.com/media/wysiwyg/slider-patisseries-AH-desk.jpg);}@media only screen and (max-width: 768px) and (min-width: 640px) {.background-image-620e1cf497881 {background-image: url(https://www.lenotre.com/media/wysiwyg/slider-patisseries-AH-mob.jpg);}}@media only screen and (max-width: 640px) {.background-image-620e1cf497881 {background-image: url(https://www.lenotre.com/media/wysiwyg/slider-patisseries-AH-mob.jpg);}}
+									</style>
+								</div>
+							</div>
+							<div data-content-type="slide" data-slide-name="La Boulangerie" data-appearance="poster" data-show-button="never" data-show-overlay="never" data-element="main">
+								<div data-element="empty_link">
+									<div class="pagebuilder-slide-wrapper background-image-620e1cf4978f5" data-background-images='{\"desktop_image\":\"https://www.lenotre.com/media/wysiwyg/slider-boulangerie-viennoiserie.jpg\",\"mobile_image\":\"https://www.lenotre.com/media/wysiwyg/slider-boulangerie-viennoiserie-mob.jpg\"}' data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="wrapper" data-pb-style="PA84881">
+										<div class="pagebuilder-overlay pagebuilder-poster-overlay" data-overlay-color="" data-element="overlay" data-pb-style="DA6146N">
+											<div class="pagebuilder-poster-content">
+												<div data-element="content">
+													<h2></h2>
+													<h2>Nos pains et viennoiseries</h2>
+													<p id="D4CQS2Q">
+														Succombez aux cr&eacute;ations de nos Chefs boulangers pour vos petits-d&eacute;jeuners, brunchs ou encore vos go&ucirc;ters !
+													</p>
+													<p>
+													</p>
+													<p>
+													</p>
+													<div class="widget block block-category-link">
+														<a href="https://www.lenotre.com/patisserie/boulangerie-viennoiserie.html"><span>D&eacute;couvrir</span></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<style type="text/css">
+.background-image-620e1cf4978f5 {background-image: url(https://www.lenotre.com/media/wysiwyg/slider-boulangerie-viennoiserie.jpg);}@media only screen and (max-width: 768px) and (min-width: 640px) {.background-image-620e1cf4978f5 {background-image: url(https://www.lenotre.com/media/wysiwyg/slider-boulangerie-viennoiserie-mob.jpg);}}@media only screen and (max-width: 640px) {.background-image-620e1cf4978f5 {background-image: url(https://www.lenotre.com/media/wysiwyg/slider-boulangerie-viennoiserie-mob.jpg);}}
+									</style>
+								</div>
+							</div>
+							<div data-content-type="slide" data-slide-name="Nos id&eacute;es cadeaux" data-appearance="poster" data-show-button="never" data-show-overlay="never" data-element="main">
+								<div data-element="empty_link">
+									<div class="pagebuilder-slide-wrapper background-image-620e1cf497949" data-background-images='{\"desktop_image\":\"https://www.lenotre.com/media/wysiwyg/slider-idees-cadeaux_choco.jpg\",\"mobile_image\":\"https://www.lenotre.com/media/wysiwyg/slider-idees-cadeaux_choco_mobile.jpg\"}' data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="wrapper" data-pb-style="WBLE7WV">
+										<div class="pagebuilder-overlay pagebuilder-poster-overlay" data-overlay-color="" data-element="overlay" data-pb-style="JJK7DYQ">
+											<div class="pagebuilder-poster-content">
+												<div data-element="content">
+													<h2></h2>
+													<h2>Id&eacute;es cadeaux</h2>
+													<p id="D4CQS2Q">
+														D&eacute;couvrez notre collection de macarons, de chocolats et toutes nos autres douceurs &agrave; offrir.
+													</p>
+													<p>
+													</p>
+													<p>
+													</p>
+													<div class="widget block block-category-link">
+														<a href="https://www.lenotre.com/idees-cadeaux.html"><span>D&eacute;couvrir</span></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<style type="text/css">
+.background-image-620e1cf497949 {background-image: url(https://www.lenotre.com/media/wysiwyg/slider-idees-cadeaux_choco.jpg);}@media only screen and (max-width: 768px) and (min-width: 640px) {.background-image-620e1cf497949 {background-image: url(https://www.lenotre.com/media/wysiwyg/slider-idees-cadeaux_choco_mobile.jpg);}}@media only screen and (max-width: 640px) {.background-image-620e1cf497949 {background-image: url(https://www.lenotre.com/media/wysiwyg/slider-idees-cadeaux_choco_mobile.jpg);}}
+									</style>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-content-type="row" data-appearance="contained" data-element="main">
+				<div class="pb-products-block" data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="XTV63YF">
+					<div class="pagebuilder-column-group" style="display: flex;" data-content-type="column-group" data-grid-size="12" data-element="main">
+						<div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="FTWWGB6">
+							<h2 data-content-type="heading" data-appearance="default" data-element="main">Nos gourmandises</h2>
+						</div>
+					</div>
+					<h3 data-content-type="heading" data-appearance="default" data-element="main">Commandez nos produits en ligne</h3>
+					<div data-content-type="products" data-appearance="carousel" data-autoplay="false" data-autoplay-speed="4000" data-infinite-loop="false" data-show-arrows="true" data-show-dots="false" data-carousel-mode="default" data-center-padding="90px" data-element="main">
+						<ol class="product-items widget-product-carousel">
+							<li class="product-item">
+							<div class="product-item-info">
+								<a onclick='window.dataLayer.push({"event":"select_item","ecommerce":{"items":[{"item_name":"Schuss aux agrumes","item_id":"Schuss_aux_agrumes_Commun","price":36.4,"item_category3":"NA","item_category4":"NA","item_category":"P\u00e2tisserie","item_category2":"P\u00e2tisseries","item_variant":"Produit a variation","item_list_name":"Listing_home","item_list_id":2,"index":1,"quantity":1,"item_brand":"NA"}]}});' href="https://www.lenotre.com/schuss-aux-agrumes-schuss-aux-agrumes-commun.html" class="product-item-photo">
+								<span class="product-image-container product-image-container-15697">
+								<span class="product-image-wrapper">
+								<img class="product-image-photo" src="https://www.lenotre.com/media/catalog/product/S/c/Schuss_aux_agrumes_hiver__Caroline_Faccioli_bab2.jpg?quality=80&amp;bg-color=255,255,255&amp;fit=bounds&amp;height=255&amp;width=255&amp;canvas=255:255" loading="lazy" width="255" height="255" alt="Schuss aux agrumes"></span>
+								</span>
+								<style>
+.product-image-container-15697 {
+    width: 255px;
+}
+.product-image-container-15697 span.product-image-wrapper {
+    padding-bottom: 100%;
+}
+								</style>
+								<script type="text/javascript">prodImageContainers = document.querySelectorAll(".product-image-container-15697");
+for (var i = 0; i < prodImageContainers.length; i++) {
+    prodImageContainers[i].style.width = "255px";
+}
+prodImageContainersWrappers = document.querySelectorAll(
+    ".product-image-container-15697  span.product-image-wrapper"
+);
+for (var i = 0; i < prodImageContainersWrappers.length; i++) {
+    prodImageContainersWrappers[i].style.paddingBottom = "100%";
+}</script>
+								</a>
+								<div class="product-item-details">
+									<strong class="product-item-name product name">
+									<a onclick='window.dataLayer.push({"event":"select_item","ecommerce":{"items":[{"item_name":"Schuss aux agrumes","item_id":"Schuss_aux_agrumes_Commun","price":36.4,"item_category3":"NA","item_category4":"NA","item_category":"P\u00e2tisserie","item_category2":"P\u00e2tisseries","item_variant":"Produit a variation","item_list_name":"Listing_home","item_list_id":2,"index":1,"quantity":1,"item_brand":"NA"}]}});' title="Schuss aux agrumes" href="https://www.lenotre.com/schuss-aux-agrumes-schuss-aux-agrumes-commun.html" class="product-item-link">
+									Schuss aux agrumes </a>
+									</strong>
+									<div class="price-box price-final_price" data-role="priceBox" data-product-id="15697" data-price-box="product-id-15697">
+										<span class="normal-price">
+										<span class="price-container price-final_price tax weee">
+										<span class="price-label">&Agrave; partir de</span>
+										<span id="old-price-15697-widget-product-carousel" data-price-amount="36.4" data-price-type="finalPrice" class="price-wrapper "><span class="price">36,40&nbsp;&euro;</span></span>
+										</span>
+										</span>
+										<span class="price-type-label">
+										T.T.C </span>
+									</div>
+									<div class="product-item-inner">
+										<div class="product-item-actions">
+											<div class="actions-primary">
+												<form action="https://www.lenotre.com/schuss-aux-agrumes-schuss-aux-agrumes-commun.html" method="post">
+													<input name="form_key" type="hidden" value="1QXQwoBtlVGX6UkG"><button type="submit" title="Voir le produit" class="action tocart primary">
+													<span>Voir le produit</span>
+													</button>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							</li>
+							<li class="product-item">
+							<div class="product-item-info">
+								<a onclick='window.dataLayer.push({"event":"select_item","ecommerce":{"items":[{"item_name":"Plateau \u00ab Tentation \u00bb compos\u00e9 de 18 pi\u00e8ces","item_id":"85866","price":37,"item_category3":"NA","item_category4":"NA","item_category":"Traiteur sal\u00e9","item_category2":"Ap\u00e9ritifs &amp; Cocktails","item_variant":"Produit unitaire","item_list_name":"Listing_home","item_list_id":2,"index":2,"quantity":1,"item_brand":"NA"}]}});' href="https://www.lenotre.com/85866.html" class="product-item-photo">
+								<span class="product-image-container product-image-container-1584">
+								<span class="product-image-wrapper">
+								<img class="product-image-photo" src="https://www.lenotre.com/media/catalog/product/L/E/LENOTRE___Automne_hiver__365_e554.jpg?quality=80&amp;bg-color=255,255,255&amp;fit=bounds&amp;height=255&amp;width=255&amp;canvas=255:255" loading="lazy" width="255" height="255" alt="Plateau &laquo; Tentation &raquo; compos&eacute; de 18 pi&egrave;ces"></span>
+								</span>
+								<style>
+.product-image-container-1584 {
+    width: 255px;
+}
+.product-image-container-1584 span.product-image-wrapper {
+    padding-bottom: 100%;
+}
+								</style>
+								<script type="text/javascript">prodImageContainers = document.querySelectorAll(".product-image-container-1584");
+for (var i = 0; i < prodImageContainers.length; i++) {
+    prodImageContainers[i].style.width = "255px";
+}
+prodImageContainersWrappers = document.querySelectorAll(
+    ".product-image-container-1584  span.product-image-wrapper"
+);
+for (var i = 0; i < prodImageContainersWrappers.length; i++) {
+    prodImageContainersWrappers[i].style.paddingBottom = "100%";
+}</script>
+								</a>
+								<div class="product-item-details">
+									<strong class="product-item-name product name">
+									<a onclick='window.dataLayer.push({"event":"select_item","ecommerce":{"items":[{"item_name":"Plateau \u00ab Tentation \u00bb compos\u00e9 de 18 pi\u00e8ces","item_id":"85866","price":37,"item_category3":"NA","item_category4":"NA","item_category":"Traiteur sal\u00e9","item_category2":"Ap\u00e9ritifs &amp; Cocktails","item_variant":"Produit unitaire","item_list_name":"Listing_home","item_list_id":2,"index":2,"quantity":1,"item_brand":"NA"}]}});' title="Plateau &laquo; Tentation &raquo; compos&eacute; de 18 pi&egrave;ces" href="https://www.lenotre.com/85866.html" class="product-item-link">
+									Plateau &laquo; Tentation &raquo; compos&eacute; de 18 pi&egrave;ces </a>
+									</strong>
+									<div class="price-box price-final_price" data-role="priceBox" data-product-id="1584" data-price-box="product-id-1584">
+										<span class="price-container price-final_price tax weee">
+										<span id="old-price-1584-widget-product-carousel" data-price-amount="37" data-price-type="finalPrice" class="price-wrapper "><span class="price">37,00&nbsp;&euro;</span></span>
+										</span>
+										<span class="price-type-label">
+										T.T.C </span>
+									</div>
+									<div class="product-item-inner">
+										<div class="product-item-actions">
+											<div class="actions-primary">
+												<form data-role="tocart-form" data-product-sku="85866" action="https://www.lenotre.com/checkout/cart/add/uenc/aHR0cHM6Ly93d3cubGVub3RyZS5jb20v/product/1584/" method="post">
+													<input type="hidden" name="product" value="1584"><input type="hidden" name="uenc" value="aHR0cHM6Ly93d3cubGVub3RyZS5jb20vY2hlY2tvdXQvY2FydC9hZGQvdWVuYy9hSFIwY0hNNkx5OTNkM2N1YkdWdWIzUnlaUzVqYjIwdi9wcm9kdWN0LzE1ODQv"><input name="form_key" type="hidden" value="1QXQwoBtlVGX6UkG"><button type="submit" title="Ajouter au panier" class="action tocart primary">
+													<span>Ajouter au panier</span>
+													</button>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							</li>
+							<li class="product-item">
+							<div class="product-item-info">
+								<a onclick='window.dataLayer.push({"event":"select_item","ecommerce":{"items":[{"item_name":"Coffret de 24 macarons fours","item_id":"133559","price":53.55,"item_category3":"NA","item_category4":"NA","item_category":"Id\u00e9es cadeaux","item_category2":"Macarons","item_variant":"Produit unitaire","item_list_name":"Listing_home","item_list_id":2,"index":3,"quantity":1,"item_brand":"NA"}]}});' href="https://www.lenotre.com/coffret-de-24-macarons-fours-133559.html" class="product-item-photo">
+								<span class="product-image-container product-image-container-67">
+								<span class="product-image-wrapper">
+								<img class="product-image-photo" src="https://www.lenotre.com/media/catalog/product/C/o/Coffret_24_macarons_assortis_AMBIANCE_a435.jpg?quality=80&amp;bg-color=255,255,255&amp;fit=bounds&amp;height=255&amp;width=255&amp;canvas=255:255" loading="lazy" width="255" height="255" alt="Coffret de 24 macarons fours"></span>
+								</span>
+								<style>
+.product-image-container-67 {
+    width: 255px;
+}
+.product-image-container-67 span.product-image-wrapper {
+    padding-bottom: 100%;
+}
+								</style>
+								<script type="text/javascript">prodImageContainers = document.querySelectorAll(".product-image-container-67");
+for (var i = 0; i < prodImageContainers.length; i++) {
+    prodImageContainers[i].style.width = "255px";
+}
+prodImageContainersWrappers = document.querySelectorAll(
+    ".product-image-container-67  span.product-image-wrapper"
+);
+for (var i = 0; i < prodImageContainersWrappers.length; i++) {
+    prodImageContainersWrappers[i].style.paddingBottom = "100%";
+}</script>
+								</a>
+								<div class="product-item-details">
+									<strong class="product-item-name product name">
+									<a onclick='window.dataLayer.push({"event":"select_item","ecommerce":{"items":[{"item_name":"Coffret de 24 macarons fours","item_id":"133559","price":53.55,"item_category3":"NA","item_category4":"NA","item_category":"Id\u00e9es cadeaux","item_category2":"Macarons","item_variant":"Produit unitaire","item_list_name":"Listing_home","item_list_id":2,"index":3,"quantity":1,"item_brand":"NA"}]}});' title="Coffret de 24 macarons fours" href="https://www.lenotre.com/coffret-de-24-macarons-fours-133559.html" class="product-item-link">
+									Coffret de 24 macarons fours </a>
+									</strong>
+									<div class="price-box price-final_price" data-role="priceBox" data-product-id="67" data-price-box="product-id-67">
+										<span class="price-container price-final_price tax weee">
+										<span id="old-price-67-widget-product-carousel" data-price-amount="53.55" data-price-type="finalPrice" class="price-wrapper "><span class="price">53,55&nbsp;&euro;</span></span>
+										</span>
+										<span class="price-type-label">
+										T.T.C </span>
+									</div>
+									<div class="product-item-inner">
+										<div class="product-item-actions">
+											<div class="actions-primary">
+												<form data-role="tocart-form" data-product-sku="133559" action="https://www.lenotre.com/checkout/cart/add/uenc/aHR0cHM6Ly93d3cubGVub3RyZS5jb20v/product/67/" method="post">
+													<input type="hidden" name="product" value="67"><input type="hidden" name="uenc" value="aHR0cHM6Ly93d3cubGVub3RyZS5jb20vY2hlY2tvdXQvY2FydC9hZGQvdWVuYy9hSFIwY0hNNkx5OTNkM2N1YkdWdWIzUnlaUzVqYjIwdi9wcm9kdWN0LzY3Lw,,"><input name="form_key" type="hidden" value="1QXQwoBtlVGX6UkG"><button type="submit" title="Ajouter au panier" class="action tocart primary">
+													<span>Ajouter au panier</span>
+													</button>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							</li>
+							<li class="product-item">
+							<div class="product-item-info">
+								<a onclick="window.dataLayer.push({&quot;event&quot;:&quot;select_item&quot;,&quot;ecommerce&quot;:{&quot;items&quot;:[{&quot;item_name&quot;:&quot;Patate douce au curry de l\u00e9gumes d'hiver&quot;,&quot;item_id&quot;:&quot;138251&quot;,&quot;price&quot;:10,&quot;item_category3&quot;:&quot;NA&quot;,&quot;item_category4&quot;:&quot;NA&quot;,&quot;item_category&quot;:&quot;Traiteur sal\u00e9&quot;,&quot;item_category2&quot;:&quot;Entr\u00e9es&quot;,&quot;item_variant&quot;:&quot;Produit unitaire&quot;,&quot;item_list_name&quot;:&quot;Listing_home&quot;,&quot;item_list_id&quot;:2,&quot;index&quot;:4,&quot;quantity&quot;:1,&quot;item_brand&quot;:&quot;NA&quot;}]}});" href="https://www.lenotre.com/patate-douce-au-curry-de-legumes-d-hiver-138251.html" class="product-item-photo">
+								<span class="product-image-container product-image-container-14366">
+								<span class="product-image-wrapper">
+								<img class="product-image-photo" src="https://www.lenotre.com/media/catalog/product/V/e/Verrine_patate_douce_curry_de_l_gumes__Caroline_Faccioli_5624.jpg?quality=80&amp;bg-color=255,255,255&amp;fit=bounds&amp;height=255&amp;width=255&amp;canvas=255:255" loading="lazy" width="255" height="255" alt="Patate douce au curry de l&eacute;gumes d'hiver"></span>
+								</span>
+								<style>
+.product-image-container-14366 {
+    width: 255px;
+}
+.product-image-container-14366 span.product-image-wrapper {
+    padding-bottom: 100%;
+}
+								</style>
+								<script type="text/javascript">prodImageContainers = document.querySelectorAll(".product-image-container-14366");
+for (var i = 0; i < prodImageContainers.length; i++) {
+    prodImageContainers[i].style.width = "255px";
+}
+prodImageContainersWrappers = document.querySelectorAll(
+    ".product-image-container-14366  span.product-image-wrapper"
+);
+for (var i = 0; i < prodImageContainersWrappers.length; i++) {
+    prodImageContainersWrappers[i].style.paddingBottom = "100%";
+}</script>
+								</a>
+								<div class="product-item-details">
+									<strong class="product-item-name product name">
+									<a onclick="window.dataLayer.push({&quot;event&quot;:&quot;select_item&quot;,&quot;ecommerce&quot;:{&quot;items&quot;:[{&quot;item_name&quot;:&quot;Patate douce au curry de l\u00e9gumes d'hiver&quot;,&quot;item_id&quot;:&quot;138251&quot;,&quot;price&quot;:10,&quot;item_category3&quot;:&quot;NA&quot;,&quot;item_category4&quot;:&quot;NA&quot;,&quot;item_category&quot;:&quot;Traiteur sal\u00e9&quot;,&quot;item_category2&quot;:&quot;Entr\u00e9es&quot;,&quot;item_variant&quot;:&quot;Produit unitaire&quot;,&quot;item_list_name&quot;:&quot;Listing_home&quot;,&quot;item_list_id&quot;:2,&quot;index&quot;:4,&quot;quantity&quot;:1,&quot;item_brand&quot;:&quot;NA&quot;}]}});" title="Patate douce au curry de l&eacute;gumes d'hiver" href="https://www.lenotre.com/patate-douce-au-curry-de-legumes-d-hiver-138251.html" class="product-item-link">
+									Patate douce au curry de l&eacute;gumes d'hiver </a>
+									</strong>
+									<div class="price-box price-final_price" data-role="priceBox" data-product-id="14366" data-price-box="product-id-14366">
+										<span class="price-container price-final_price tax weee">
+										<span id="old-price-14366-widget-product-carousel" data-price-amount="10" data-price-type="finalPrice" class="price-wrapper "><span class="price">10,00&nbsp;&euro;</span></span>
+										</span>
+										<span class="price-type-label">
+										T.T.C </span>
+									</div>
+									<div class="product-item-inner">
+										<div class="product-item-actions">
+											<div class="actions-primary">
+												<form data-role="tocart-form" data-product-sku="138251" action="https://www.lenotre.com/checkout/cart/add/uenc/aHR0cHM6Ly93d3cubGVub3RyZS5jb20v/product/14366/" method="post">
+													<input type="hidden" name="product" value="14366"><input type="hidden" name="uenc" value="aHR0cHM6Ly93d3cubGVub3RyZS5jb20vY2hlY2tvdXQvY2FydC9hZGQvdWVuYy9hSFIwY0hNNkx5OTNkM2N1YkdWdWIzUnlaUzVqYjIwdi9wcm9kdWN0LzE0MzY2Lw,,"><input name="form_key" type="hidden" value="1QXQwoBtlVGX6UkG"><button type="submit" title="Ajouter au panier" class="action tocart primary">
+													<span>Ajouter au panier</span>
+													</button>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							</li>
+						</ol>
+						<script type="text/x-magento-init">
+        {
+            "[data-role=tocart-form], .form.map.checkout": {
+                "catalogAddToCart": {
+                    "product_sku": "138251"
+                }
+            }
+        }
+    </script>
+					</div>
+					<div data-content-type="buttons" data-appearance="stacked" data-same-width="false" data-element="main" data-pb-style="VMEWNRP" class="pb-buttons">
+						<div data-content-type="button-item" data-appearance="default" data-element="main" data-pb-style="SELND4G">
+							<a class="pagebuilder-button-link" href="https://www.lenotre.com/patisserie.html" target="" data-link-type="category" data-element="link"><span data-element="link_text">Voir plus de produits</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-content-type="row" data-appearance="full-width" data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="main" data-pb-style="FKIDFNN">
+				<div class="row-full-width-inner" data-element="inner">
+					<div class="reinsurance-wrapper" data-content-type="block" data-appearance="default" data-element="main">
+						<div class="widget block block-static-block">
+							<style>
+#html-body [data-pb-style=XO3OG7C],#html-body [data-pb-style=YV09K27]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll}#html-body [data-pb-style=XO3OG7C]{width:25%;align-self:stretch}#html-body [data-pb-style=RIGJ0AH]{border-style:none}#html-body [data-pb-style=KDW4SHW],#html-body [data-pb-style=RW41XPN]{max-width:100%;height:auto}#html-body [data-pb-style=C6KBIYD]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;width:25%;align-self:stretch}#html-body [data-pb-style=NXQ71HN]{border-style:none}#html-body [data-pb-style=P9Y67JU],#html-body [data-pb-style=POXQ5OJ]{max-width:100%;height:auto}#html-body [data-pb-style=K2S2XTH]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;width:25%;align-self:stretch}#html-body [data-pb-style=WQBQ931]{border-style:none}#html-body [data-pb-style=BAIATPW],#html-body [data-pb-style=CR12Y2T]{max-width:100%;height:auto}#html-body [data-pb-style=RPJH0PW]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll;width:25%;align-self:stretch}#html-body [data-pb-style=DF1HJS3]{border-style:none}#html-body [data-pb-style=JR0GXR1],#html-body [data-pb-style=X5VWJ9D]{max-width:100%;height:auto}@media only screen and (max-width: 768px) { #html-body [data-pb-style=DF1HJS3],#html-body [data-pb-style=NXQ71HN],#html-body [data-pb-style=RIGJ0AH],#html-body [data-pb-style=WQBQ931]{border-style:none} }
+							</style>
+							<div data-content-type="row" data-appearance="full-width" data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="main" data-pb-style="YV09K27">
+								<div class="row-full-width-inner" data-element="inner">
+									<div class="pagebuilder-column-group" style="display: flex;" data-content-type="column-group" data-grid-size="12" data-element="main">
+										<div class="pagebuilder-column reinssurance-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="XO3OG7C">
+											<figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="RIGJ0AH"><img class="pagebuilder-mobile-hidden" src="https://www.lenotre.com/media/wysiwyg/delivery.png" alt="" title="" data-element="desktop_image" data-pb-style="KDW4SHW"><img class="pagebuilder-mobile-only" src="https://www.lenotre.com/media/wysiwyg/delivery.png" alt="" title="" data-element="mobile_image" data-pb-style="RW41XPN"></figure>
+											<div class="reinssurance-title" data-content-type="text" data-appearance="default" data-element="main">
+												<p>
+													Livraison &agrave; domicile
+												</p>
+											</div>
+											<div data-content-type="text" data-appearance="default" data-element="main">
+												<p>
+													gratuite &agrave; partir de 150&euro;
+												</p>
+												<p>
+													&nbsp;
+												</p>
+											</div>
+										</div>
+										<div class="pagebuilder-column reinssurance-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="C6KBIYD">
+											<figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="NXQ71HN"><img class="pagebuilder-mobile-hidden" src="https://www.lenotre.com/media/wysiwyg/payment.png" alt="" title="" data-element="desktop_image" data-pb-style="P9Y67JU"><img class="pagebuilder-mobile-only" src="https://www.lenotre.com/media/wysiwyg/payment.png" alt="" title="" data-element="mobile_image" data-pb-style="POXQ5OJ"></figure>
+											<div class="reinssurance-title" data-content-type="text" data-appearance="default" data-element="main">
+												<p>
+													Click &amp; Collect
+												</p>
+											</div>
+											<div data-content-type="text" data-appearance="default" data-element="main">
+												<p>
+													en 24H
+												</p>
+											</div>
+										</div>
+										<div class="pagebuilder-column reinssurance-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="K2S2XTH">
+											<figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="WQBQ931"><img class="pagebuilder-mobile-hidden" src="https://www.lenotre.com/media/wysiwyg/customer.png" alt="" title="" data-element="desktop_image" data-pb-style="BAIATPW"><img class="pagebuilder-mobile-only" src="https://www.lenotre.com/media/wysiwyg/customer.png" alt="" title="" data-element="mobile_image" data-pb-style="CR12Y2T"></figure>
+											<div class="reinssurance-title" data-content-type="text" data-appearance="default" data-element="main">
+												<p>
+													Paiement s&eacute;curis&eacute;
+												</p>
+											</div>
+											<div data-content-type="text" data-appearance="default" data-element="main">
+												<p>
+													pour vos achats en ligne
+												</p>
+											</div>
+										</div>
+										<div class="pagebuilder-column reinssurance-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="RPJH0PW">
+											<figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="DF1HJS3"><img class="pagebuilder-mobile-hidden" src="https://www.lenotre.com/media/wysiwyg/click-collect.png" alt="" title="" data-element="desktop_image" data-pb-style="X5VWJ9D"><img class="pagebuilder-mobile-only" src="https://www.lenotre.com/media/wysiwyg/click-collect.png" alt="" title="" data-element="mobile_image" data-pb-style="JR0GXR1"></figure>
+											<div class="reinssurance-title" data-content-type="text" data-appearance="default" data-element="main">
+												<p>
+													Service Clients
+												</p>
+											</div>
+											<div data-content-type="text" data-appearance="default" data-element="main">
+												<p>
+													0811 656 656
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+			<div class="custom-3-pushes" data-content-type="row" data-appearance="full-width" data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="main" data-pb-style="MQHAP8J">
+				<div class="row-full-width-inner" data-element="inner">
+					<div class="pagebuilder-column-group" style="display: flex;" data-content-type="column-group" data-grid-size="12" data-element="main">
+						<div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="G8V19S4">
+							<h2 data-content-type="heading" data-appearance="default" data-element="main">Inspirez-vous</h2>
+							<h3 data-content-type="heading" data-appearance="default" data-element="main">Un d&eacute;but d'ann&eacute;e tout en gourmandise...</h3>
+						</div>
+					</div>
+					<div class="pagebuilder-column-group" style="display: flex;" data-content-type="column-group" data-grid-size="12" data-element="main">
+						<div class="pagebuilder-column layer-push" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="NMX98FV">
+							<figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="COWN0WX"><img class="pagebuilder-mobile-hidden" src="https://www.lenotre.com/media/wysiwyg/Sans_titre_6__1.png" alt="Nos plats r&eacute;confortants pour l'hiver" title="" data-element="desktop_image" data-pb-style="XQOXAWM"><img class="pagebuilder-mobile-only" src="https://www.lenotre.com/media/wysiwyg/Sans_titre_7_.png" alt="Nos plats r&eacute;confortants pour l'hiver" title="" data-element="mobile_image" data-pb-style="TYYN07B"></figure>
+							<div data-content-type="text" data-appearance="default" data-element="main">
+								<p>
+									<strong>Recettes hivernales</strong>
+								</p>
+								<p>
+									Saucisson brioch&eacute;, quiche aux poireaux, Coulibiac de saumon... Partagez des moments convivialit&eacute; autour de nos recettes &agrave; partager !
+								</p>
+								<p>
+									<span class="widget block block-category-link-inline">
+									<a href="https://www.lenotre.com/traiteur-sale/plats-accompagnements.html" title="Savourer"><span>Savourer</span></a>
+									</span>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="pagebuilder-column-group" style="display: flex;" data-content-type="column-group" data-grid-size="12" data-element="main">
+						<div class="pagebuilder-column card-push" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="D1EUGB0">
+							<figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="R9MAQIY"><img class="pagebuilder-mobile-hidden" src="https://www.lenotre.com/media/wysiwyg/Sans_titre_21__1.jpg" alt="Instants gourmands" title="" data-element="desktop_image" data-pb-style="U9LU89U"><img class="pagebuilder-mobile-only" src="https://www.lenotre.com/media/wysiwyg/Sans_titre_22__1.jpg" alt="Instants gourmands" title="" data-element="mobile_image" data-pb-style="OJDC75P"></figure>
+							<div data-content-type="text" data-appearance="default" data-element="main">
+								<p>
+									<strong>Instants gourmands</strong>
+								</p>
+								<p>
+									D&eacute;couvrez nos suggestions pour vos brunchs en amoureux et vos go&ucirc;ters en famille !
+								</p>
+								<p>
+									<span class="widget block block-category-link-inline">
+									<a href="https://www.lenotre.com/patisserie/teatime.html" title="D&eacute;guster"><span>D&eacute;guster</span></a>
+									</span>
+								</p>
+							</div>
+						</div>
+						<div class="pagebuilder-column card-push" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="K4JWD4D">
+							<figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="UOW133I"><img class="pagebuilder-mobile-hidden" src="https://www.lenotre.com/media/wysiwyg/CARTE_CADEAUX_HOME_PAGE_285X195.jpg" alt="texte alternatif" title="" data-element="desktop_image" data-pb-style="FOKCKMR"><img class="pagebuilder-mobile-only" src="https://www.lenotre.com/media/wysiwyg/IMG_moodboard-2-738x506.jpg" alt="texte alternatif" title="" data-element="mobile_image" data-pb-style="FP275CR"></figure>
+							<div data-content-type="text" data-appearance="default" data-element="main">
+								<p>
+									<strong>Nos cartes cadeaux</strong>
+								</p>
+								<p>
+									En quelques clics, cr&eacute;ez et commandez votre carte cadeau personnalis&eacute;e...
+								</p>
+								<p>
+									<span class="widget block block-category-link-inline">
+									<a href="https://www.lenotre.com/idees-cadeaux/cartes-cadeaux.html" title="Offrir"><span>Offrir</span></a>
+									</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-content-type="row" data-appearance="contained" data-element="main">
+				<div class="custom-4-pushes-slider" data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="GCW6U3Y">
+					<div class="pagebuilder-column-group" style="display: flex;" data-content-type="column-group" data-grid-size="12" data-element="main">
+						<div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="JFF9M1S">
+							<h2 data-content-type="heading" data-appearance="default" data-element="main">D&eacute;couvrez</h2>
+							<h3 data-content-type="heading" data-appearance="default" data-element="main">Nos activit&eacute;s</h3>
+						</div>
+					</div>
+					<div class="pagebuilder-column-group" style="display: flex;" data-content-type="column-group" data-grid-size="12" data-element="main">
+						<div class="pagebuilder-column vertical-card-push" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="HQEEKNS">
+							<figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="MS5S2H2"><img class="pagebuilder-mobile-hidden" src="https://www.lenotre.com/media/wysiwyg/ACTIVITES_EVENEMENT_253X281.jpg" alt="" title="" data-element="desktop_image" data-pb-style="SK1RIJB"><img class="pagebuilder-mobile-only" src="https://www.lenotre.com/media/wysiwyg/img_activites_1-703x778.jpg" alt="" title="" data-element="mobile_image" data-pb-style="KEL1TCE"></figure>
+							<div data-content-type="text" data-appearance="default" data-element="main">
+								<p>
+									<strong>&Eacute;v&eacute;nements</strong>
+								</p>
+								<p>
+									Sublimer votre &eacute;v&eacute;nement pour convertir l&rsquo;&eacute;ph&eacute;m&egrave;re en souvenirs m&eacute;morables, c&rsquo;est tout l&rsquo;art de recevoir de la maison Len&ocirc;tre.&nbsp;
+								</p>
+							</div>
+							<div data-content-type="buttons" data-appearance="inline" data-same-width="false" data-element="main">
+								<div data-content-type="button-item" data-appearance="default" data-element="main" data-pb-style="UWJLINR">
+									<a class="pagebuilder-button-link" href="https://lenotre-evenements.com/evenements-particuliers/" target="_blank" data-link-type="default" data-element="link" data-pb-style="N7BBD64"><span data-element="link_text">D&eacute;couvrir</span></a>
+								</div>
+							</div>
+						</div>
+						<div class="pagebuilder-column vertical-card-push" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="G67WTB1">
+							<figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="WSC12Q4"><img class="pagebuilder-mobile-hidden" src="https://www.lenotre.com/media/wysiwyg/ACTIVITES_ENTREPRISE_253X281.jpg" alt="" title="" data-element="desktop_image" data-pb-style="JJMNGI6"><img class="pagebuilder-mobile-only" src="https://www.lenotre.com/media/wysiwyg/img_activites_2-703x778_1.jpg" alt="" title="" data-element="mobile_image" data-pb-style="UHSWA3D"></figure>
+							<div data-content-type="text" data-appearance="default" data-element="main">
+								<p id="Q655ISK">
+									<strong>Entreprises</strong>
+								</p>
+								<p>
+									Pour vos cadeaux d'affaires personnalis&eacute;s, vos r&eacute;unions d&eacute;jeuner ou vos pauses gourmandes, la maison Len&ocirc;tre se tient &agrave; vos c&ocirc;t&eacute;s pour vous offrir des instants uniques de gourmandise.
+								</p>
+							</div>
+							<div data-content-type="buttons" data-appearance="inline" data-same-width="false" data-element="main">
+								<div data-content-type="button-item" data-appearance="default" data-element="main" data-pb-style="XVBYICS">
+									<a class="pagebuilder-button-link" href="https://www.lenotre.com/espace-entreprise" target="_blank" data-link-type="default" data-element="link" data-pb-style="OR2NWTK"><span data-element="link_text">D&eacute;couvrir</span></a>
+								</div>
+							</div>
+						</div>
+						<div class="pagebuilder-column vertical-card-push" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="WWEJLXS">
+							<figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="PXQ7NWG"><img class="pagebuilder-mobile-hidden" src="https://www.lenotre.com/media/wysiwyg/ACTIVITES_ECOLE_PRO_253X281_1.jpg" alt="" title="" data-element="desktop_image" data-pb-style="K1C502P"><img class="pagebuilder-mobile-only" src="https://www.lenotre.com/media/wysiwyg/img_activites_3-703x778.jpg" alt="" title="" data-element="mobile_image" data-pb-style="BGTQ578"></figure>
+							<div data-content-type="text" data-appearance="default" data-element="main">
+								<p>
+									<strong><span class="ILfuVd"><span class="hgKElc">&Eacute;</span></span>cole professionnelle</strong>
+								</p>
+								<p>
+									H&eacute;rit&eacute;e de Gaston Len&ocirc;tre, la passion de la transmission anime les g&eacute;n&eacute;rations de chefs qui se succ&egrave;dent.&nbsp; Notre &eacute;cole a form&eacute; et forme les plus grands noms de la p&acirc;tisserie et de la cuisine.
+								</p>
+							</div>
+							<div data-content-type="buttons" data-appearance="inline" data-same-width="false" data-element="main">
+								<div data-content-type="button-item" data-appearance="default" data-element="main" data-pb-style="OH5MMQE">
+									<a class="pagebuilder-button-link" href="https://www.ecole-lenotre.com/" target="_blank" data-link-type="default" data-element="link" data-pb-style="RJ78MNV"><span data-element="link_text">D&eacute;couvrir</span></a>
+								</div>
+							</div>
+						</div>
+						<div class="pagebuilder-column vertical-card-push" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="JL5F41Q">
+							<figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="D0HUOFX"><img class="pagebuilder-mobile-hidden" src="https://www.lenotre.com/media/wysiwyg/ACTIVITES_CONSEILS_253X281.jpg" alt="" title="" data-element="desktop_image" data-pb-style="QJGC9P1"><img class="pagebuilder-mobile-only" src="https://www.lenotre.com/media/wysiwyg/img_activites_4-703x778_1.jpg" alt="" title="" data-element="mobile_image" data-pb-style="W4ALKIG"></figure>
+							<div data-content-type="text" data-appearance="default" data-element="main">
+								<p id="WG9IR6Q">
+									<strong>Conseil</strong>
+								</p>
+								<p>
+									<!--StartFragment-->
+									<!--EndFragment-->
+								</p>
+								<p style="margin-top: 0pt; margin-bottom: 0pt; margin-left: 0in; direction: ltr; unicode-bidi: embed; word-break: normal; text-align: left;">
+									Un savoir-faire unique et de nombreuses r&eacute;f&eacute;rences la Maison Len&ocirc;tre &agrave; travers son &eacute;cole met &agrave; disposition ses expertises, connaissances et savoir-faire afin d'apporter des conseils et solutions sur-mesure.
+								</p>
+							</div>
+							<div data-content-type="buttons" data-appearance="inline" data-same-width="false" data-element="main">
+								<div data-content-type="button-item" data-appearance="default" data-element="main" data-pb-style="AJXRJCU">
+									<a class="pagebuilder-button-link" href="https://www.lenotre.com/la-maison" target="" data-link-type="default" data-element="link" data-pb-style="W3PURAW"><span data-element="link_text">D&eacute;couvrir</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="custom-1-push" data-content-type="row" data-appearance="full-width" data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="main" data-pb-style="XNAA2P5">
+				<div class="row-full-width-inner" data-element="inner">
+					<div class="pagebuilder-column-group" style="display: flex;" data-content-type="column-group" data-grid-size="12" data-element="main">
+						<div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="W3H6UPO">
+							<h2 data-content-type="heading" data-appearance="default" data-element="main">LEN&Ocirc;TRE</h2>
+							<h3 data-content-type="heading" data-appearance="default" data-element="main">Notre savoir-faire</h3>
+							<div data-content-type="text" data-appearance="default" data-element="main">
+								<p>
+									La maison Len&ocirc;tre perp&eacute;tue son mod&egrave;le artisanal et reste fid&egrave;le &agrave; son esprit de famille. G&eacute;n&eacute;rosit&eacute; et partage, plaisir et passion, sont le vocabulaire de l&rsquo;exigence de nos savoir-faire. Nos cr&eacute;ations aussi gourmandes qu&rsquo;&eacute;l&eacute;gantes r&eacute;v&egrave;lent l&rsquo;audace d&rsquo;un univers o&ugrave; chaque d&eacute;tail fait l&rsquo;exception.
+								</p>
+								<p>
+									<span class="widget block block-cms-link-inline">
+									<a href="https://www.lenotre.com/la-maison" title="LA MAISON ">
+									<span>D&eacute;couvrir</span>
+									</a>
+									</span>
+								</p>
+							</div>
+						</div>
+						<div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="MGEUEVN">
+							<figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="YXU18WS"><img class="pagebuilder-mobile-hidden" src="https://www.lenotre.com/media/wysiwyg/IMG_savoir_faire-540x355.jpg" alt="" title="" data-element="desktop_image" data-pb-style="BBKUBMR"><img class="pagebuilder-mobile-only" src="https://www.lenotre.com/media/wysiwyg/IMG_savoir_faire-738x481.jpg" alt="" title="" data-element="mobile_image" data-pb-style="VIY1UU5"></figure>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-content-type="row" data-appearance="contained" data-element="main">
+				<div class="custom-2-pushes-slider" data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="DHJ4QKB">
+					<div class="pagebuilder-column-group" style="display: flex;" data-content-type="column-group" data-grid-size="12" data-element="main">
+						<div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="UXTXNTV">
+							<h2 data-content-type="heading" data-appearance="default" data-element="main">Espaces entreprises</h2>
+							<h3 data-content-type="heading" data-appearance="default" data-element="main">Vos &eacute;v&eacute;nements d'entreprise</h3>
+							<div data-content-type="text" data-appearance="default" data-element="main">
+								<p id="RG0IJ6F">
+									Vous souhaitez organiser un &eacute;v&eacute;nement pour votre entreprise, un petit d&eacute;jeuner,&nbsp;un cocktail ou un d&icirc;ner,&nbsp;la maison Len&ocirc;tre vous accompagne dans la conception et la r&eacute;alisation de tous vos &eacute;v&eacute;nements professionnels.
+								</p>
+							</div>
+							<div data-content-type="buttons" data-appearance="inline" data-same-width="false" data-element="main">
+								<div data-content-type="button-item" data-appearance="default" data-element="main" data-pb-style="JN2KFJ1">
+									<a class="pagebuilder-button-link" href="https://www.lenotre.com/espace-entreprise" target="" data-link-type="default" data-element="link" data-pb-style="P8FPNB6"><span data-element="link_text">D&eacute;couvrir l'espace entreprise</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pagebuilder-column-group" style="display: flex;" data-content-type="column-group" data-grid-size="12" data-element="main">
+						<div class="pagebuilder-column layer-push" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="YG34MGV">
+							<figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="CNG6LGP"><img class="pagebuilder-mobile-hidden" src="https://www.lenotre.com/media/wysiwyg/SERVICES_CADEAUX_D_AFFAIRE_255x354.jpg" alt="" title="" data-element="desktop_image" data-pb-style="GFKFRVD"><img class="pagebuilder-mobile-only" src="https://www.lenotre.com/media/wysiwyg/IMG_01-703x975_1.jpg" alt="" title="" data-element="mobile_image" data-pb-style="W0UYYBU"></figure>
+							<div data-content-type="text" data-appearance="default" data-element="main">
+								<p>
+									<strong>Cadeaux d'entreprise</strong>
+								</p>
+								<p>
+									D'&eacute;l&eacute;gants coffrets &agrave; composer, bonbons de chocolat,....
+								</p>
+								<p>
+									<span class="widget block block-category-link-inline">
+									<a href="https://www.lenotre.com/cadeaux-d-affaires.html" title="Je d&eacute;couvre"><span>Je d&eacute;couvre</span></a>
+									</span>
+								</p>
+							</div>
+						</div>
+						<div class="pagebuilder-column layer-push" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="S33SK8E">
+							<figure data-content-type="image" data-appearance="full-width" data-element="main" data-pb-style="GVPRDKF"><img class="pagebuilder-mobile-hidden" src="https://www.lenotre.com/media/wysiwyg/SERVICES_CARTE_CADEAUX_255x354.jpg" alt="" title="" data-element="desktop_image" data-pb-style="N6SVKGA"><img class="pagebuilder-mobile-only" src="https://www.lenotre.com/media/wysiwyg/IMG_02-703x975_1.jpg" alt="" title="" data-element="mobile_image" data-pb-style="XPKGVG2"></figure>
+							<div data-content-type="text" data-appearance="default" data-element="main">
+								<p>
+									<strong>Nos cartes cadeaux</strong>
+								</p>
+								<p>
+									En quelques clics, offrez tout l'univers de la maison Len&ocirc;tre
+								</p>
+								<p>
+									<a tabindex="0" href="https://www.lenotre.com/idees-cadeaux/cartes-cadeaux.html">Je d&eacute;couvre</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</main><footer class="page-footer">
+	<div class="block-newsletter-wrapper">
+		<div class="block newsletter">
+			<div class="title">
+				<strong>Newsletter</strong>
+			</div>
+			<div class="content">
+				<form class="form subscribe" novalidate action="https://www.lenotre.com/newsletter/subscriber/new/" method="post" data-mage-init='{"validation": {"errorClass": "mage-error"}}' id="newsletter-validate-detail">
+					<div class="field newsletter">
+						<div class="control">
+							<label for="newsletter">
+							<span class="label">
+							Recevez nos actualités gourmandes en avant première ! </span>
+							<span class="input">
+							<input name="email" type="email" id="newsletter" placeholder="Votre adresse e-mail ici" data-mage-init='{"mage/trim-input":{}}' data-validate="{required:true, 'validate-email':true}"/>
+							</span>
+							</label>
+						</div>
+					</div>
+					<div class="actions">
+						<button class="action subscribe primary" title="Je&#x20;m&#x27;inscris" type="submit" aria-label="Subscribe">
+						<span>Je m&#039;inscris</span>
+						</button>
+					</div>
+					<input type="hidden" name="am-gdpr-checkboxes-from" value="subscription"/>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/block-submit-on-send": {
+                "formId": "newsletter-validate-detail"
+            }
+        }
+    }
+	</script>
+	<div class="main-footer-wrapper">
+		<div class="main-footer">
+			<a class="logo" href="https://www.lenotre.com/" title="" aria-label="store logo">
+			<img src="https://www.lenotre.com/static/version1644416330/frontend/Lenotre/default/default/images/logo-lenotre.svg" alt="" width="160" height="160"/>
+			</a>
+			<div class="primary-links-footer">
+				<div class="footer-links footer-menu">
+					<ul>
+						<li>
+						<a href="https://www.lenotre.com/patisserie.html">Pâtisserie</a>
+						</li>
+						<li>
+						<a href="https://www.lenotre.com/traiteur-sale.html">Traiteur salé</a>
+						</li>
+						<li>
+						<a href="https://www.lenotre.com/epicerie.html">Épicerie</a>
+						</li>
+						<li>
+						<a href="https://www.lenotre.com/idees-cadeaux.html">Idées cadeaux</a>
+						</li>
+						<li>
+						<a href="https://www.lenotre.com/cadeaux-d-affaires.html">Cadeaux d&#039;affaires</a>
+						</li>
+						<li>
+						<a href="https://www.lenotre.com/cocktails-traiteur.html">Cocktails traiteur</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer-links footer-links-1">
+					<style>
+#html-body [data-pb-style=A2RSL67],#html-body [data-pb-style=FUXP359]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll}#html-body [data-pb-style=FUXP359]{width:100%;align-self:stretch}
+					</style>
+					<div data-content-type="row" data-appearance="contained" data-element="main">
+						<div data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="A2RSL67">
+							<div class="pagebuilder-column-group" style="display: flex;" data-content-type="column-group" data-grid-size="12" data-element="main">
+								<div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="FUXP359">
+									<div data-content-type="text" data-appearance="default" data-element="main">
+										<ul>
+											<li><span class="widget block block-cms-link-inline">
+											<a href="https://www.lenotre.com/modalites-de-livraison" title="Modalit&eacute;s de livraison">
+											<span>Modalit&eacute;s de livraison</span>
+											</a>
+											</span>
+											</li>
+											<li><span class="widget block block-cms-link-inline">
+											<a href="https://www.lenotre.com/espace-entreprise" title="Espace entreprises">
+											<span>Espace entreprises</span>
+											</a>
+											</span>
+											</li>
+											<li><a tabindex="0" title="Nous contacter" href="/contact/form/productOrderInfo">Nous contacter</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-links footer-links-1">
+					<style>
+#html-body [data-pb-style=TK4AF4R],#html-body [data-pb-style=V79RO1H]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll}#html-body [data-pb-style=V79RO1H]{width:100%;align-self:stretch}
+					</style>
+					<div data-content-type="row" data-appearance="contained" data-element="main">
+						<div data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="TK4AF4R">
+							<div class="pagebuilder-column-group" style="display: flex;" data-content-type="column-group" data-grid-size="12" data-element="main">
+								<div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="V79RO1H">
+									<div data-content-type="text" data-appearance="default" data-element="main">
+										<ul>
+											<li><span class="widget block block-cms-link-inline">
+											<a href="https://www.lenotre.com/faq" title="FAQ">
+											<span>FAQ</span>
+											</a>
+											</span>
+											</li>
+											<li><span class="widget block block-cms-link-inline">
+											<a href="https://www.lenotre.com/politique-gestion-cookies" title="Politique de gestion des cookies">
+											<span>Politique de gestion des cookies</span>
+											</a>
+											</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-social-links">
+				<ul>
+					<li class="footer-pinterest">
+					<a href="http://www.pinterest.com/lenotre" title="Suivez-nous sur Pinterest" target="_blank" rel="noopener noreferrer nofollow"><span>Pinterest</span></a>
+					</li>
+					<li class="footer-facebook">
+					<a href="https://www.facebook.com/MaisonLenotre" title="Suivez-nous sur Facebook" target="_blank" rel="noopener noreferrer nofollow"><span>Facebook</span></a>
+					</li>
+					<li class="footer-instagram">
+					<a href="https://www.instagram.com/lenotre/" title="Suivez-nous sur Instagram" target="_blank" rel="noopener noreferrer nofollow"><span>Instagram</span></a>
+					</li>
+					<li class="footer-linkedin">
+					<a href="https://fr.linkedin.com/company/lenotre" title="Suivez-nous sur LinkedIn" target="_blank" rel="noopener noreferrer nofollow"><span>LinkedIn</span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="secondary-footer-wrapper">
+		<div class="secondary-footer">
+			<div class="footer-links">
+				<style>
+#html-body [data-pb-style=D4GKWB2],#html-body [data-pb-style=ULGYF9R]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll}#html-body [data-pb-style=ULGYF9R]{width:100%;align-self:stretch}
+				</style>
+				<div data-content-type="row" data-appearance="contained" data-element="main">
+					<div data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-background-type="image" data-video-loop="true" data-video-play-only-visible="true" data-video-lazy-load="true" data-video-fallback-src="" data-element="inner" data-pb-style="D4GKWB2">
+						<div class="pagebuilder-column-group" style="display: flex;" data-content-type="column-group" data-grid-size="12" data-element="main">
+							<div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="ULGYF9R">
+								<div data-content-type="text" data-appearance="default" data-element="main">
+									<ul>
+										<li><span class="widget block block-cms-link-inline">
+										<a href="https://www.lenotre.com/politique-de-confidentialite" title="Politique de confidentialit&eacute;">
+										<span>Politique de confidentialit&eacute;</span>
+										</a>
+										</span>
+										</li>
+										<li><span class="widget block block-cms-link-inline">
+										<a href="https://www.lenotre.com/conditions-generales-de-vente" title="Conditions g&eacute;n&eacute;rales de vente">
+										<span>Conditions g&eacute;n&eacute;rales de vente</span>
+										</a>
+										</span>
+										</li>
+										<li><span style="color: #000000;"><span class="widget block block-cms-link-inline">
+										<a href="https://www.lenotre.com/conditions-generales-d-utilisation" title="Politique g&eacute;n&eacute;rale d'utilisation">
+										<span>Politique g&eacute;n&eacute;rale d'utilisation</span>
+										</a>
+										</span>
+										</span></li>
+										<li><span class="widget block block-cms-link-inline">
+										<a href="https://www.lenotre.com/mentions-legales" title="Mentions l&eacute;gales">
+										<span>Mentions l&eacute;gales</span>
+										</a>
+										</span>
+										</li>
+									</ul>
+									<p>
+										&nbsp;
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</footer>
+	<script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "storage-manager": {
+                            "component": "Magento_Catalog/js/storage-manager",
+                            "appendTo": "",
+                            "storagesConfiguration" : {"recently_viewed_product":{"requestConfig":{"syncUrl":"https:\/\/www.lenotre.com\/catalog\/product\/frontend_action_synchronize\/"},"lifetime":"1000","allowToSendRequest":null},"recently_compared_product":{"requestConfig":{"syncUrl":"https:\/\/www.lenotre.com\/catalog\/product\/frontend_action_synchronize\/"},"lifetime":"1000","allowToSendRequest":null},"product_data_storage":{"updateRequestConfig":{"url":"https:\/\/www.lenotre.com\/rest\/default\/V1\/products-render-info"},"requestConfig":{"syncUrl":"https:\/\/www.lenotre.com\/catalog\/product\/frontend_action_synchronize\/"},"allowToSendRequest":null}}                        }
+                    }
+                }
+            }
+        }
+	</script>
+	<div class="amgdpr-privacy-policy" id="amgdpr-privacy-popup">
+	</div>
+	<script type="text/x-magento-init">
+    {
+        "#amgdpr-privacy-popup": {
+            "Amasty_Gdpr/js/popup":{
+                "textUrl":"https://www.lenotre.com/gdpr/policy/policytext/",
+                "modalClass": "amgdpr-modal-container"
+            }
+        }
+    }
+	</script>
+</div>
+<script>
+        require(['jquery','weltpixel_ga4_persistentLayer','weltpixel_ga4_gtm', 'Magento_Customer/js/customer-data'],
+            function ($, wpGa4PersDl ,wpGa4gtm, customerData) {
+                $( document ).ajaxComplete(function( event, xhr, settings ) {
+                    if (settings.url.search('/customer\/section\/load/') > 0) {
+                        var response = xhr.responseJSON;
+                        if (response.wp_ga4) {
+                            var dataLayerData = $.parseJSON(response.wp_ga4.datalayer);
+                            for (index in dataLayerData) {
+                                window.dataLayer.push(dataLayerData[index]);
+                            }
+                        }
+                    }
+                });
+                var wpPersDlOptions = {'storageExpiryTime' : 30 };
+                var wpGtmOptions = {
+                    'enabled' : 0,
+                    'persDataLayer' : wpGa4PersDl
+                };
+                wpGa4PersDl.init(wpPersDlOptions);
+                wpGa4gtm.trackPromotion(wpGtmOptions);
+            });
+    </script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-12c9065653da5dc0f14","applicationID":"913275406","transactionName":"YANaY0oCDBJVAUcNW1lJeVRMCg0PGwFeFxteCFxSQEwLD1AHSw==","queueTime":0,"applicationTime":388,"atts":"TERZFQIYHxw=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+</body>
+</html>
